@@ -1,0 +1,11 @@
+[Unit]
+Description=Custome prometheus sert exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/cert_exporter.py
+Restart=always
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
